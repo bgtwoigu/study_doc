@@ -1,0 +1,17 @@
+一、添加PPA
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+
+Key安装好后，在终端输入：
+
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+
+二、更新
+
+在终端输入：
+sudo apt-get update
+
+三、安装
+
+安装稳定版Chrome，在终端输入：sudo apt-get install google-chrome-stable
+安装Beta版Chrome，在终端输入：sudo apt-get install google-chrome-beta
+安装不稳定版Chrome，在终端输入：sudo apt-get install google-chrome-unstable
