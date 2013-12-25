@@ -1,0 +1,6 @@
+一、vim鼠标复制方案
+1. 开启鼠标支持
+set mouse = a
+2. 从word中复制vim，在vim中按住“shift+鼠标右键”粘贴
+3. 从vim中复制到word，在vim中按住“shift+鼠标左键"选择（即复制），在word中直接粘贴就行
+二、退出多个窗口：qa
