@@ -1,0 +1,60 @@
+set nu
+set mouse=a
+set ignorecase
+
+"for taglist
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+
+"for winmanager
+let g:winManagerWindowLayout='FileExplorer|TagList'
+nmap <silent> <F2> :WMToggle<cr>
+
+"for cscope
+:set cscopequickfix=s-,c-,d-,i-,t-,e-
+
+"for grep
+nnoremap <silent> <F3> :Grep<CR>
+
+"for ctags:new-omni-completion
+filetype plugin indent on
+set completeopt=longest,menu
+"for new-omni-completion colors
+"highlight Pmenu    guibg=darkgrey  guifg=black 
+"highlight PmenuSel guibg=lightgrey guifg=black
+
+"for supertab
+let g:SuperTabRetainCompletionType=2
+let g:SuperTabDefaultCompletionType="<C-X><C-O>"
+
+"for minibufexp
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1 
+
+""""""""""""""""""""""""""""""
+"a.vim, switch c/h file
+""""""""""""""""""""""""""""""
+nnoremap <silent> <F12> :A<CR>
+
+""""""""""""""""""""""""""""""
+"lookupfile setting
+"""""""""""""""""""""""""""""""
+let g:LookupFile_MinPatLength = 4
+let g:LookupFile_PreserveLastPattern = 0
+let g:LookupFile_PreservePatternHistory = 1
+let g:LookupFile_AlwaysAcceptFirst = 1
+let g:LookupFile_AllowNewFiles = 0
+let g:LookupFile_EnableRemapCmd = 0
+if filereadable("./filenametags")
+    let g:LookupFile_TagExpr = '"./filenametags"'
+endif
+
+""""""""""""""""""""""""""""""
+"tab and space
+""""""""""""""""""""""""""""""
+set softtabstop=4
+set expandtab
+set shiftwidth=4
+

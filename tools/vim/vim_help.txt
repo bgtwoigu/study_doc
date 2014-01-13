@@ -4,3 +4,20 @@ set mouse = a
 2. 从word中复制vim，在vim中按住“shift+鼠标右键”粘贴
 3. 从vim中复制到word，在vim中按住“shift+鼠标左键"选择（即复制），在word中直接粘贴就行
 二、退出多个窗口：qa
+三、vmb结尾的文件，vim打开该文件后，通过输入“:so %”解压该文件
+四、快捷搜索：
+“shift+*”向下搜索当前光标处word
+"shift+#"向上搜索当前光标处word
+五、回到上次光标所在位置："ctrl+o"
+六、比较两个文件:vim -d a.rc b.rc
+七、脚本生成cscope和tags后，加入到vi中
+:set tags=/home/xumingtao/share/git/linux_kernel/kernel_2.6/tags
+:cs add /home/xumingtao/share/git/linux_kernel/kernel_2.6/cscope.out /home/xumingtao/share/git/linux_kernel/kernel_2.6
+八、minibufexp中的标签管理，删掉当前标签
+鼠标高亮该标签，输入"d"，删除当前高亮标签
+九、打开的两个文件左右窗口分布(-O大写表示竖着分割，小写表示横着分割)
+vim -O file1.txt file2.txt
+
+
+
+
