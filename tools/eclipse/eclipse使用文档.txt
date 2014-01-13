@@ -1,12 +1,12 @@
-1. ÉèÖÃ´úÂë²¹È«Content assist
-Window-->Preferences-->General-->Keys£¬ËÑË÷Content assit£¬×Ô¼ºÉèÖÃµÄ²¹È«·½Ê½£¬Èç£ºalt+/
-2. ¿ìËÙËÑË÷ÎÄ¼ş£ºctrl+shift+r
-3. ¿ìËÙËÑË÷ÀàÃû£ºctrl+shift+t
-4. È«¾ÖËÑË÷ÒıÓÃ£ºctrl+shift+g
-3. ÖØÃüÃû±äÁ¿»ò·½·¨£ºalt+shift+r
-4. ÉÏÏÂÒÆ¶¯Ä³Ò»ĞĞ£ºalt+·½Ïò¼ü
-6. ¸´ÖÆÄ³Ò»ĞĞ£ºctrl+alt+·½Ïò¼ü
-5. ´°¿Ú×î´ó»¯£ºctrl+m
-6. ËÑË÷½Ó¿ÚµÄÊµÏÖÀàÁĞ±í£ºctrl+t
-7. ¸ßÁÁµ±Ç°±äÁ¿£ºalt+shift+o
-   ÉèÖÃ¸ßÁÁÑÕÉ«Window-->Preferences-->java-->Editor-->Mark Occurences£¬µÚÒ»ĞĞÓĞ¸ö¡°Annotations¡±µã»÷½øÈë£¬ÏÔÊ¾³öÁĞ±í£¬ÕÒµ½ Occurrence annotation ÓÒ±ßÑ¡ÔñColor¼´¿É¡£
+1. è®¾ç½®ä»£ç è¡¥å…¨Content assist
+Window-->Preferences-->General-->Keysï¼Œæœç´¢Content assitï¼Œè‡ªå·±è®¾ç½®çš„è¡¥å…¨æ–¹å¼ï¼Œå¦‚ï¼šalt+/
+2. å¿«é€Ÿæœç´¢æ–‡ä»¶ï¼šctrl+shift+r
+3. å¿«é€Ÿæœç´¢ç±»åï¼šctrl+shift+t
+4. å…¨å±€æœç´¢å¼•ç”¨ï¼šctrl+shift+g
+3. é‡å‘½åå˜é‡æˆ–æ–¹æ³•ï¼šalt+shift+r
+4. ä¸Šä¸‹ç§»åŠ¨æŸä¸€è¡Œï¼šalt+æ–¹å‘é”®
+6. å¤åˆ¶æŸä¸€è¡Œï¼šctrl+alt+æ–¹å‘é”®
+5. çª—å£æœ€å¤§åŒ–ï¼šctrl+m
+6. æœç´¢æ¥å£çš„å®ç°ç±»åˆ—è¡¨ï¼šctrl+t
+7. é«˜äº®å½“å‰å˜é‡ï¼šalt+shift+o
+   è®¾ç½®é«˜äº®é¢œè‰²Window-->Preferences-->java-->Editor-->Mark Occurencesï¼Œç¬¬ä¸€è¡Œæœ‰ä¸ªâ€œAnnotationsâ€ç‚¹å‡»è¿›å…¥ï¼Œæ˜¾ç¤ºå‡ºåˆ—è¡¨ï¼Œæ‰¾åˆ° Occurrence annotation å³è¾¹é€‰æ‹©Colorå³å¯ã€‚
