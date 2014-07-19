@@ -1,0 +1,7 @@
+一、Android官网标准安装 
+sudo apt-get install git gnupg flex bison gperf build-essential   zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev   libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386   libgl1-mesa-dev g++-multilib mingw32 tofrodos   python-markdown libxml2-utils xsltproc zlib1g-dev:i386
+ sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
+二、高通平台补充安装
+ sudo apt-get install libxml-parser-perl libxml-simple-perl libexpat1 libxml-parser-perl libxml-simple-perl libexpat1 
+三、个人安装
+ sudo apt-get install ssh xrdp nautilus-open-terminal vim samba screen axel tree realpath
