@@ -10,3 +10,4 @@ Window-->Preferences-->General-->Keys，搜索Content assit，自己设置的补
 6. 搜索接口的实现类列表：ctrl+t
 7. 高亮当前变量：alt+shift+o
    设置高亮颜色Window-->Preferences-->java-->Editor-->Mark Occurences，第一行有个“Annotations”点击进入，显示出列表，找到 Occurrence annotation 右边选择Color即可。
+8. /**回车添加注释

@@ -1,5 +1,6 @@
 列出最近的学习计划
 1. shell脚本
 2. linux 驱动相关
-3. python 相关
-4. git 相关
+3. Makefile
+4. python 相关
+5. git 相关
