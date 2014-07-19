@@ -1,0 +1,10 @@
+1. screen的使用
+作用：后台开启终端
+新建：screen -dmS back_xumingtao
+连接：screen -r back_xumingtao
+断开：连接后，按下ctrl+a，再接着按d，断开连接
+关闭: 连接后，按下ctrl+a，再接着按k，关闭连接
+2. &挂后台
+示例：vi 1.txt &
+查看：jobs查看挂后台有几个进程
+前置切换：fg 1(1表示jobs查看到的第一个程序)
