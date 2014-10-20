@@ -11,3 +11,5 @@ Window-->Preferences-->General-->Keys，搜索Content assit，自己设置的补
 7. 高亮当前变量：alt+shift+o
    设置高亮颜色Window-->Preferences-->java-->Editor-->Mark Occurences，第一行有个“Annotations”点击进入，显示出列表，找到 Occurrence annotation 右边选择Color即可。
 8. /**回车添加注释
+9. ctrl+h打开搜索tab页面
+10. 显示行号：ctrl+F10，在打开的tab页中，选择“Show Line Numbers”
