@@ -1,3 +1,16 @@
-1. 加载和卸载某个驱动
-insmod
-rmmod
+示例：sleepy.ko
+1. 加载驱动
+busybox insmod sleepy.ko
+加载完驱动后，会在/sys/module下生成sleepy目录。
+2. 查看加载状态及主设备号
+cat /proc/devices
+如：247 sleepy，即247为主设备号
+3. 根据设备号新建设备文件(/dev/sleepyxmt),后续即可直接操作该文件
+cd /dev
+busybox mknod -m 666 sleepyxmt c 247 0
+4. 卸载驱动
+busybox rmmod sleepy
+5. 查看模块是否加载
+lsmod显示所有加载的modules，实际对应的是/proc/module目录
+
+
