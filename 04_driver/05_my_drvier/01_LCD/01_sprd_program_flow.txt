@@ -1,0 +1,15 @@
+一、UBOOT阶段
+  1.基本流程
+    A. 在u-boot/board/spreadtrum/sp8810/下增加lcd驱动
+    B. 修改文件u-boot/borad/spreadtrum/sp8810/Makefile，增加编译文件
+    C. 修改文件u-boot/drivers/video/sc8810_fb.c->lcd_panel，增加lcd配置
+    D. 修改u-boot/include/configs/sp8810.h，根据lcd分辨率确定需要的宏
+        //#define CONFIG_LCD_HVGA 1
+        #define CONFIG_LCD_WVGA 1
+  2.lcd ic驱动
+    A. 拷贝一份默认LCD驱动
+    B. 修改lcd_spec, info_mcu配置信息，参考样品确认书中，修改高度宽度总线类型，型号
+    C. 找LCD FAE拿初始化代码（主要是寄存器配置），命令和数据下发修改为平台格式
+    D. 找FAE拿到LCD ID信息，先固定填写id值点亮lcd，后续和FAE确认如何通过代码获取ID。（做好以上几部后屏幕点亮，但是显示黑白线条，没有有效图像）
+    E. 
+二、kernel阶段
