@@ -1,0 +1,10 @@
+一、概述
+    Linux主机默认自带Mailx邮件工具，可以简单收发邮件。
+    查看版本号：mailx -V
+二、配置外部SMTP服务器，收发邮件
+    vi /etc/nail.rc，增加如下配置
+    set from=name@xxx.com smtp=smtp.263.net
+    set smtp-auth-user=name@xxx.com smtp-auth-password=password smtp-auth=login
+三、测试
+    mail -s test name@xxx.com < /etc/nail.rc   
+    执行完毕后，会在name@xxx.com中收到一份邮件，OK！
