@@ -20,7 +20,9 @@ vim -O file1.txt file2.txt
 十、块操作
 1. 编辑模式下输入v、V、ctrl+v，进入块模式
 2. 插入：选择块后，输入大写I，插入需要块输入的内容，此时只有当前行会改变，ESC退出后等待1S，所有选择块都会变动
-
+十一、文件格式
+windows和linux文件格式不一样，可以通过:set ff查看当前是什么系统格式
+切换为linux格式:set fileformat=unix
 
 
 
