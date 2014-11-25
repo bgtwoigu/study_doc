@@ -1,4 +1,4 @@
-Title：从带路径的字符串中获取文件名称
+﻿Title：从带路径的字符串中获取文件名称
 var1=/usr/lib/abcdefg.so.bak  
 var2=/usr/sbin/ifconfiggg  
 all_name=`basename $var1`  
@@ -9,4 +9,4 @@ echo "all_name: $all_name"      #all_name: abcdefg.so.bak
 echo "sub_name1: $sub_name1"    #sub_name1: abcdefg.so  
 echo "sub_name2: $sub_name2"    #sub_name2: ifconfig  
 
-是的，主要是使用命令 basename解析带路径的文件名称
+是的，主要是使用命令basename解析带路径的文件名称

@@ -8,3 +8,6 @@
 示例：vi 1.txt &
 查看：jobs查看挂后台有几个进程
 前置切换：fg 1(1表示jobs查看到的第一个程序)
+3. 创建普通用户
+adduser fcopyuser
+userdel fcopyuser
