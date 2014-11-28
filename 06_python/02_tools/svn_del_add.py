@@ -9,6 +9,8 @@ import urllib
 is_effective = True #True False
 #0 is changelist filename.
 IGNORE_FILENAME = ('changeList.txt', 'gen_patch_directory.py', 'gen_pac.sh')
+#
+MOD = 100
 
 def get_output(cmd):
     system = sys.platform
@@ -22,16 +24,38 @@ def get_output(cmd):
         status, output = commands.getstatusoutput(cmd)
         #print status
     return output
-                
-def svn_add_files(add_files_list):
+
+def do_svn_op(cmd_str, op_list):
     blankStr = ' '
-    svn_cmd = 'svn add --force --no-ignore %s' % blankStr.join(add_files_list)
+    svn_cmd = cmd_str + ' %s' % blankStr.join(op_list)
     commands.getoutput(svn_cmd)
     
+def prase_list(cmd_str, files_list):
+    length = len(files_list)
+    count = length / MOD
+
+    i = start = end = 0
+    while count > i:
+        start = i * MOD
+        end = (i + 1) * MOD
+        list = files_list[start:end]
+        do_svn_op(cmd_str, list)
+        i += 1
+    else:
+        list = files_list[end:-1]
+        do_svn_op(cmd_str, list)
+
+def svn_add_files(add_files_list):
+    #blankStr = ' '
+    #svn_cmd = 'svn add --force --no-ignore %s' % blankStr.join(add_files_list)
+    #commands.getoutput(svn_cmd)
+    prase_list('svn add --force --no-ignore ', add_files_list)
+    
 def svn_delete_files(delete_files_list):
-    blankStr = ' '
-    svn_cmd = 'svn delete --force %s' % blankStr.join(delete_files_list)
-    commands.getoutput(svn_cmd)
+    #blankStr = ' '
+    #svn_cmd = 'svn delete --force %s' % blankStr.join(delete_files_list)
+    #commands.getoutput(svn_cmd)
+    prase_list('svn delete --force ', delete_files_list)
 
 def gen_changeListFile(changeList):
     toast = '#################changelist#################\r\n'
