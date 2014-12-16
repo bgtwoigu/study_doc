@@ -84,6 +84,7 @@ def replaceInFile(filename, author):
             newLine = line[0:split_index] + author + line[split_index:]
             #print newLine
         print newLine,
+    fileinput.close()
 
 def get_begin_commit_id():
     if not os.path.exists(COMMIT_ID_FILE):
