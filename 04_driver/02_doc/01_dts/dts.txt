@@ -1,0 +1,12 @@
+一、dts文件配置路径
+如：kernel/arch/arm64/boot/dts/pxa1908-po9041.dts
+二、生成的dtb文件路径
+如：out/target/product/pxa1908FF/pxa1908-ff.dtb
+三、dtc工具路径
+如：out/target/product/pxa1908FF/obj/kernel/scripts/dtc
+四、通过dtc反编译dtb后获取整个项目配置的dts文件
+  1. 在dtc工具路径下找到dtc文件
+  2. ./dtc -h查看帮助文档
+  3. 拷贝dtb文件到当前目录
+  4. ./dtc -I dtb pxa1908-ff.dtb -o 1.dts
+  5. 1.dts即为项目配置的dts文件
