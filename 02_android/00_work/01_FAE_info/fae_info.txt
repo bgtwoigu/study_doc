@@ -4,15 +4,17 @@ https://support.marvell.com
 Username: wuzhenyuan
 Password: arserdaten
 2. 资料下载
-
+https://extranet.marvell.com/login/index.jsp
+Username：wuzhenyuan
+Password：abcd1234
 
 二、SPRD
 1. Case系统
 
 2. 资料下载，FAQ
 http://isupport.spreadtrum.com/iSupport/apply/login#*redirecturl*=ispthome
-Username：huazhang
-Password：Huazhang1204
+Username：huazhang_sw
+Password：Huazhang1229
 
 三、高通
 1. case系统
