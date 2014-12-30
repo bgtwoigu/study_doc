@@ -13,7 +13,7 @@ import shutil
 import time
 
 TRUNK_PATH = '/home/xumingtao/share/Marvell/04_Repository/02_PXA1908/01_git/PO9041/01_trunk/po9041_trunk'
-BRANCH_PATH = '/home/xumingtao/share/Marvell/04_Repository/02_PXA1908/01_git/PO9041/02_branches/po9041_AndroidULC_KK44Beta1'
+BRANCH_PATH = '/home/xumingtao/share/Marvell/04_Repository/02_PXA1908/01_git/PO9041/02_branches/po9041_Beta1_b11218'
 SCRIPT_PATH = os.path.dirname(os.path.realpath(__file__)) 
 SUBJECT_STR = 'Subject:'
 ENCODER = '?UTF-8?q?'
@@ -35,7 +35,7 @@ def do_git_cmd(git_project_path, git_cmd):
     return output
 
 def get_git_log_info(git_project_path, begin_commit_id, end_commit_id=''):
-    git_cmd = 'git log --pretty=format:"%H | %an" ' + begin_commit_id + '..' + end_commit_id
+    git_cmd = 'git log --date=short --pretty=format:"%H | %an | %cd | %s | %f | %b" ' + begin_commit_id + '..' + end_commit_id
     #print git_cmd
     return do_git_cmd(git_project_path, git_cmd)
 
@@ -165,6 +165,8 @@ def main():
     #print git_log_infoList
     for item in git_log_infoList[::-1]:
         info = item.split('|')
+        if len(info) < 2:
+            continue
         commit_id = info[0].strip()
         author = info[1].strip() + ':'
         #print info
