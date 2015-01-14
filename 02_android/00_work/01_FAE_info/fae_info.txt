@@ -5,7 +5,7 @@ Username: wuzhenyuan
 Password: arserdaten
 2. 资料下载
 https://extranet.marvell.com/login/index.jsp
-Username：wuzhenyuan
+Username：wuzhenyuan@hipad.com
 Password：abcd1234
 
 二、SPRD
