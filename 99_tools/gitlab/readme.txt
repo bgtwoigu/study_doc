@@ -36,4 +36,13 @@
 
 4. 修改配置文件后，需要重新配置
     sudo gitlab-ctl reconfigure
+
+5. 查看gitlab运行状态
+    命令：sudo gitlab-ctl status
+    run: nginx: (pid 972) 7s; run: log: (pid 971) 7s
+    run: postgresql: (pid 962) 7s; run: log: (pid 959) 7s
+    run: redis: (pid 964) 7s; run: log: (pid 963) 7s
+    run: sidekiq: (pid 967) 7s; run: log: (pid 966) 7s
+    run: unicorn: (pid 961) 7s; run: log: (pid 960) 7s
+
 二、常见问题
