@@ -1,0 +1,6 @@
+i. i2c_driver的函数各种实现，probe，remove，suspend，resume
+2. 实例化i2c_drvier结构体，赋值上面四个函数，并初始化driver和id_table，其中id_table必须至少为二维数组，即使第二个是空
+3. 实现module加载和卸载，这两个函数中主要是i2c增加和删除一个driver
+4. 设计tp设备的结构体
+5. 实现i2c通信的读写
+//6. 实现i2c设备确认，是否是当前挂载的设备
