@@ -1,0 +1,13 @@
+1. 现象svn: E200033: database is locked, executing statement 'RELEASE   s0'
+或者现象svn: E200033: sqlite: database is locked 
+解决方案：
+$ cd /your project path/.svn  
+$ mv wc.db wc.db.old         
+$ sqlite3 wc.db.old            
+$ sqlite> .backup main wc.db     
+$ sqlite> .exit 
+2. 文件已存在
+现象：svn: E000017: Can't create directory '/home/kangwensi/zc2501_XZ/ZTE_INTERNAL_MP_TIBET/.svn/tmp': File exists
+解决方案：该问题是因为文件系统错误，新建一个目录aaa，重命名为tmp后，把tmp删掉。如.svn目录下
+mkdir aaa;mv aaa tmp;rm -rf tmp
+
