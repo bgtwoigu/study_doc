@@ -1,0 +1,17 @@
+
+公司购买的非凡vpn（有效期到2016-2-19）
+
+网站：https://www.ffvpn.com
+
+网站登录账号：账号
+hipadvpn3
+密码
+hipadvpn3
+
+服务器地址获取方式： 到网站 https://www.ffvpn.com  上获取（登录后在vpn服务器列表里任选一个）
+用户名和密码：就是网站登录账号密码
+
+Android下使用VPN的方法：进入“设置/Settings” -> “无线网络设置/Wireless Network” 
+                           -> 点击“添加VPN/Add VPN” -> 选择 PPTP VPN
+                           -> VPN名字随便写，比如VPN123， 服务器地址如实填写，选中“启用用加密” 
+                           -> 按返回按键，此时VPN配置已经添加，点击这个新加的VPN配置，输入用户名和密码即可连接。 
