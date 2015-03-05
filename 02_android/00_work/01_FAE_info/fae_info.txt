@@ -14,7 +14,7 @@ Password：abcd1234
 2. 资料下载，FAQ
 http://isupport.spreadtrum.com/iSupport/apply/login#*redirecturl*=ispthome
 Username：huazhang_sw
-Password：Huazhang0202
+Password：Huazhang0304
 
 三、高通
 1. case系统
