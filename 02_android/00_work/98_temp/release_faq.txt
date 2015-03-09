@@ -1,0 +1,1 @@
+1. 版本编译常见错误关键词：error、wait、Segmentation
