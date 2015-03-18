@@ -25,8 +25,9 @@ def getProjectAndHipad(title):
     return [curProj, curHipad]
 
 def parse_excel(filename):
-    print 'filename: %s' % filename
-    #parseLists = [][]
+    newFilename = 'parse_' + filename
+    print 'filename: %s, newFilename: %s' % (filename, newFilename)
+    parseLists = []
 
     with open(filename, 'rb') as f:
         reader = csv.reader(f)
@@ -35,7 +36,13 @@ def parse_excel(filename):
             project, hipad = getProjectAndHipad(row[1])
             row.append(project)
             row.append(hipad)
-            print row
+            #print row
+            parseLists.append(row)
+
+    with open(newFilename, 'wb') as csvfile:
+        spamwriter = csv.writer(csvfile,dialect='excel')
+        for row in parseLists:
+            spamwriter.writerow(row)
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
