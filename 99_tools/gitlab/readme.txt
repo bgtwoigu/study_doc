@@ -46,3 +46,5 @@
     run: unicorn: (pid 961) 7s; run: log: (pid 960) 7s
 
 二、常见问题
+1. 添加本地仓库到gitlab管理
+gitlab默认仓库地址路径： /var/opt/gitlab/git-data
