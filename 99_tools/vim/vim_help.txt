@@ -23,6 +23,7 @@ vim -O file1.txt file2.txt
 十一、文件格式
 windows和linux文件格式不一样，可以通过:set ff查看当前是什么系统格式
 切换为linux格式:set fileformat=unix
-
-
+十二、设置行列号
+行号：set nu
+列号：set ruler
 
