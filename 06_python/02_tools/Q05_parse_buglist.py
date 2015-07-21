@@ -13,7 +13,10 @@ import xlwt
 TEMP_PATH = ".temp"
 FILE_BUGZILLA_INFO = 'bugzilla_info.xml'
 FILE_EXCEL_BUGLIST = 'Q05_buglist.excel'
-URL_Q05 = 'http://10.1.6.33/api_get_bug.php?product_name=HO9021&assigned_to=hanhao@hipad.com'
+URL_Q05 = 'http://10.1.6.33/api_get_bug.php?product_name=ZX55Q05%EF%BC%88%E8%81%94%E9%80%9AA%E5%BA%93%EF%BC%89&assigned_to=\
+dengzhilong@hipad.com,zouyuanfei@hipad.com,fengertong@hipad.com,liaoye@hipad.com,linxingyu@hipad.com,madejin@hipad.com,\
+maxiaohui@hipad.com,wangkai@hipad.com,wangyongxian@hipad.com,xiangsheng@hipad.com,xiaotiaoyun@hipad.com,yuyuanjiang@hipad.com,\
+zhangjiyou@hipad.com,zhangling@hipad.com,zhangyuan@hipad.com,zhouguangcheng@hipad.com'
 
 def getFirstElement(parent, name):
     tags = parent.getElementsByTagName(name)
@@ -105,9 +108,9 @@ class BugInfoGenerator:
         print 'BugInfoGenerator init.'
         
     def genBugInfo(self):
-        #if self.genBugInfoFile() == False:
-        #    print 'gen Buginfo error'
-        #    return False
+        if self.genBugInfoFile() == False:
+            print 'gen Buginfo error'
+            return False
         
         parser = XmlInfoParser()
         if parser.loadXml(self.mBugInfoFile) == False:
@@ -129,7 +132,7 @@ class BugInfoGenerator:
         for node in parser.getInfoEntrys():
             entry = InfoEntry(node)
             bugId = entry.getBugId()
-            author = entry.getAuthor()
+            author = entry.getAuthor().split('@')[0]
             title = entry.getTitle()
             serverity = entry.getSeverity()
             status = entry.getStatus()
@@ -153,6 +156,7 @@ class BugInfoGenerator:
         return True
 
     def genBugInfoFile(self):
+        #print URL_Q05
         data = urllib2.urlopen(URL_Q05).read()
         fp = open(self.mBugInfoFile, 'w')
         if not fp:
