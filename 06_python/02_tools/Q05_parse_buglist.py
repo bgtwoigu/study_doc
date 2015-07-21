@@ -1,0 +1,153 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#@Author: xmt
+#@Date: 2015/7/21
+
+import os, sys, xml.dom.minidom
+import urllib2
+from telnetlib import STATUS
+
+#reload(sys)
+#sys.setdefaultencoding('utf-8')
+
+TEMP_PATH = ".temp"
+FILE_BUGZILLA_INFO = 'bugzilla_info.xml'
+URL_Q05 = 'http://10.1.6.33/api_get_bug.php?product_name=HO9021&assigned_to=hanhao@hipad.com'
+
+def getFirstElement(parent, name):
+    tags = parent.getElementsByTagName(name)
+    if not tags or len(tags) < 1:
+        return None
+    return tags[0]
+
+def getFirstElementData(parent, name):
+    tag = getFirstElement(parent, name)
+    if tag == None:
+        return None
+    node = tag.firstChild
+    if not node or node.nodeType != node.TEXT_NODE:
+        return None
+    return node.data
+
+class XmlInfoParser:
+    def loadXml(self, pathname):
+        f = open(pathname)
+        self.Txt = f.read()
+        f.close()
+        return True
+
+    def getInfoEntrys(self):
+        infoEntrys = self.Txt.split('</bug>')
+        return infoEntrys
+
+class InfoEntry:
+    def __init__(self, info):
+        self.mInfo = info
+    
+    def getAttribute(self, tag):
+        start = self.mInfo.find('<' + tag + '>')
+        end = self.mInfo.find('</' + tag + '>')
+        
+        if start < 0 or end < 0:
+            return ''        
+        
+        start =  start + len(tag) + 2
+        return self.mInfo[start:end]
+    
+    def getBugId(self):
+        return self.getAttribute("bug_id")
+
+    def getAuthor(self):
+        return self.getAttribute("bug_assigned_to")
+
+    def getTitle(self):
+        return self.getAttribute("bug_title")
+
+    def getSeverity(self):
+        return self.getAttribute("bug_severity")
+    
+    def getStatus(self):
+        return self.getAttribute("bug_status")
+    
+    def getResolution(self):
+        return self.getAttribute("bug_resolution")
+
+    def getLongdescs(self):
+        longdescs = self.getAttribute("bug_longdescs")
+        if longdescs == '':
+            return ''
+      
+        descs = ''
+        for node in longdescs.split('</descs>')[::-1]:
+            if node == '':
+                continue
+            
+            start = node.find('<descs>')
+            if start < 0:
+                continue
+            
+            start += len('<descs>')            
+            desc = node[start:].strip()
+            
+            if not desc == '':
+                descs += desc + '\n'
+        
+        return descs
+
+class BugInfoGenerator:
+    def __init__(self):
+        self.mBugInfoFile = os.path.join(TEMP_PATH, FILE_BUGZILLA_INFO)
+        
+        if not os.path.isdir(TEMP_PATH):
+            os.makedirs(TEMP_PATH)
+
+        print 'BugInfoGenerator init.'
+        
+    def genBugInfo(self):
+        if self.genBugInfoFile() == False:
+            print 'gen Buginfo error'
+            return False
+        
+        parser = XmlInfoParser()
+        if parser.loadXml(self.mBugInfoFile) == False:
+            return False
+
+        for node in parser.getInfoEntrys():
+            entry = InfoEntry(node)
+            bugId = entry.getBugId()
+            author = entry.getAuthor()
+            title = entry.getTitle()
+            serverity = entry.getSeverity()
+            status = entry.getStatus()
+            resolution = entry.getResolution()
+            longdescs = entry.getLongdescs()
+            print bugId, author, title, serverity, status
+            print resolution
+            print longdescs
+            break
+                    
+        print 'done'
+        return True
+
+    def genBugInfoFile(self):
+        data = urllib2.urlopen(URL_Q05).read()
+        fp = open(self.mBugInfoFile, 'w')
+        if not fp:
+            return False
+        
+        fp.write(data)
+        fp.close()
+        return True
+
+if __name__ == "__main__":
+    # if len(sys.argv) < 6:
+    #    print "Usage: %s project url start end filepath" % sys.argv[0]
+    #    sys.exit(-1)
+
+    # generator = BugInfoGenerator(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+    generator = BugInfoGenerator()
+    if generator.genBugInfo() == False:
+        print "Error"
+        sys.exit(-1)
+
+    print "OK"
