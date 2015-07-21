@@ -5,13 +5,14 @@
 
 import os, sys, xml.dom.minidom
 import urllib2
-from telnetlib import STATUS
+import xlwt
 
 #reload(sys)
 #sys.setdefaultencoding('utf-8')
 
 TEMP_PATH = ".temp"
 FILE_BUGZILLA_INFO = 'bugzilla_info.xml'
+FILE_EXCEL_BUGLIST = 'Q05_buglist.excel'
 URL_Q05 = 'http://10.1.6.33/api_get_bug.php?product_name=HO9021&assigned_to=hanhao@hipad.com'
 
 def getFirstElement(parent, name):
@@ -104,14 +105,18 @@ class BugInfoGenerator:
         print 'BugInfoGenerator init.'
         
     def genBugInfo(self):
-        if self.genBugInfoFile() == False:
-            print 'gen Buginfo error'
-            return False
+        #if self.genBugInfoFile() == False:
+        #    print 'gen Buginfo error'
+        #    return False
         
         parser = XmlInfoParser()
         if parser.loadXml(self.mBugInfoFile) == False:
             return False
 
+        book = xlwt.Workbook(encoding='utf-8', style_compression=0)
+        sheet = book.add_sheet(FILE_EXCEL_BUGLIST, cell_overwrite_ok=True)
+        
+        row = 0
         for node in parser.getInfoEntrys():
             entry = InfoEntry(node)
             bugId = entry.getBugId()
@@ -121,11 +126,20 @@ class BugInfoGenerator:
             status = entry.getStatus()
             resolution = entry.getResolution()
             longdescs = entry.getLongdescs()
-            print bugId, author, title, serverity, status
-            print resolution
-            print longdescs
-            break
-                    
+            #print bugId, author, title, serverity, status
+            #print resolution
+            #print longdescs
+            sheet.write(row, 0, bugId)
+            sheet.write(row, 1, author)
+            sheet.write(row, 2, serverity)
+            sheet.write(row, 3, status)
+            sheet.write(row, 4, title)
+            sheet.write(row, 5, resolution)
+            sheet.write(row, 6, longdescs)
+            row += 1
+            #break
+                
+        book.save(FILE_EXCEL_BUGLIST + '.xls')    
         print 'done'
         return True
 
