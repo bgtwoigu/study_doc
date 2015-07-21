@@ -116,7 +116,16 @@ class BugInfoGenerator:
         book = xlwt.Workbook(encoding='utf-8', style_compression=0)
         sheet = book.add_sheet(FILE_EXCEL_BUGLIST, cell_overwrite_ok=True)
         
-        row = 0
+        # gen title
+        sheet.write(0, 0, 'BugId')
+        sheet.write(0, 1, '责任人')
+        sheet.write(0, 2, '优先级')
+        sheet.write(0, 3, '状态')
+        sheet.write(0, 4, '标题')
+        sheet.write(0, 5, '解决方案')
+        sheet.write(0, 6, '注释')        
+        
+        row = 1
         for node in parser.getInfoEntrys():
             entry = InfoEntry(node)
             bugId = entry.getBugId()
