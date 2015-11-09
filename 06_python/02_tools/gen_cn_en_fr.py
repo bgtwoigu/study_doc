@@ -204,9 +204,12 @@ def parse_key_from_path(path):
     key = ''
     index = path.find('/res/values')
     keylist = path[:index].split('/')
-    for item in keylist[:-1]:
+    for item in keylist[:-3]:
         key += item[0]
     
+    for item in keylist[-3:-1]:
+        key += item[:2]
+
     key = key + '_' + keylist[-1]
     #print key, path
 
