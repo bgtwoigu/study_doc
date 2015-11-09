@@ -2,59 +2,124 @@ set nu
 set mouse=a
 set ignorecase
 
-"for taglist
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-
-"for winmanager
-let g:winManagerWindowLayout='FileExplorer|TagList'
-nmap <silent> <F2> :WMToggle<cr>
-
-"for cscope
-:set cscopequickfix=s-,c-,d-,i-,t-,e-
-
-"for grep
-nnoremap <silent> <F3> :Grep<CR>
-
-"for ctags:new-omni-completion
-filetype plugin indent on
-set completeopt=longest,menu
-"for new-omni-completion colors
-"highlight Pmenu    guibg=darkgrey  guifg=black 
-"highlight PmenuSel guibg=lightgrey guifg=black
-
-"for supertab
-let g:SuperTabRetainCompletionType=2
-let g:SuperTabDefaultCompletionType="<C-X><C-O>"
-
-"for minibufexp
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1 
+""""""""""""""""""""""""""""""
+"for chinese character
+""""""""""""""""""""""""""""""
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
 
 """"""""""""""""""""""""""""""
-"a.vim, switch c/h file
-""""""""""""""""""""""""""""""
-nnoremap <silent> <F12> :A<CR>
-
-""""""""""""""""""""""""""""""
-"lookupfile setting
-"""""""""""""""""""""""""""""""
-let g:LookupFile_MinPatLength = 4
-let g:LookupFile_PreserveLastPattern = 0
-let g:LookupFile_PreservePatternHistory = 1
-let g:LookupFile_AlwaysAcceptFirst = 1
-let g:LookupFile_AllowNewFiles = 0
-let g:LookupFile_EnableRemapCmd = 0
-if filereadable("./filenametags")
-    let g:LookupFile_TagExpr = '"./filenametags"'
-endif
-
-""""""""""""""""""""""""""""""
-"tab and space
+"for tab and space
 """"""""""""""""""""""""""""""
 set softtabstop=4
 set expandtab
 set shiftwidth=4
+
+""""""""""""""""""""""""""""""
+"for pathogen
+""""""""""""""""""""""""""""""
+"execute pathogen#infect()
+
+""""""""""""""""""""""""""""""
+"for minibufexp
+""""""""""""""""""""""""""""""
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1 
+nnoremap <Leader>mbc :MBEClose<CR> 
+
+""""""""""""""""""""""""""""""
+"for A. a.vim, switch c/h file
+""""""""""""""""""""""""""""""
+nnoremap <silent> <F12> :A<CR>
+
+""""""""""""""""""""""""""""""
+"for NERD Tree
+""""""""""""""""""""""""""""""
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if !argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+""""""""""""""""""""""""""""""
+"for taglist
+""""""""""""""""""""""""""""""
+"let Tlist_Show_One_File=1
+"let Tlist_Exit_OnlyWindow=1
+
+""""""""""""""""""""""""""""""
+"for winmanager
+""""""""""""""""""""""""""""""
+"let g:winManagerWindowLayout='FileExplorer|TagList'
+"nmap <silent> <F2> :WMToggle<cr>
+
+""""""""""""""""""""""""""""""
+"for cscope
+""""""""""""""""""""""""""""""
+":set cscopequickfix=s-,c-,d-,i-,t-,e-
+
+""""""""""""""""""""""""""""""
+"for grep
+""""""""""""""""""""""""""""""
+"nnoremap <silent> <F3> :Grep<CR>
+
+""""""""""""""""""""""""""""""
+"for ctags:new-omni-completion
+""""""""""""""""""""""""""""""
+"filetype plugin indent on
+"set completeopt=longest,menu
+
+""""""""""""""""""""""""""""""
+"for new-omni-completion colors
+""""""""""""""""""""""""""""""
+"highlight Pmenu    guibg=darkgrey  guifg=black 
+"highlight PmenuSel guibg=lightgrey guifg=black
+
+""""""""""""""""""""""""""""""
+"for supertab
+""""""""""""""""""""""""""""""
+"let g:SuperTabRetainCompletionType=2
+"let g:SuperTabDefaultCompletionType="<C-X><C-O>"
+
+
+""""""""""""""""""""""""""""""
+"for lookupfile setting
+""""""""""""""""""""""""""""""
+"let g:LookupFile_MinPatLength = 4
+"let g:LookupFile_PreserveLastPattern = 0
+"let g:LookupFile_PreservePatternHistory = 1
+"let g:LookupFile_AlwaysAcceptFirst = 1
+"let g:LookupFile_AllowNewFiles = 0
+"let g:LookupFile_EnableRemapCmd = 0
+"if filereadable("./filenametags")
+"    let g:LookupFile_TagExpr = '"./filenametags"'
+"endif
+
+""""""""""""""""""""""""""""""
+"for AIRLINE
+""""""""""""""""""""""""""""""
+"set laststatus=2
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = '>'
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline_powerline_fonts = 1
+
+
+""""""""""""""""""""""""""""""
+"for SrcEXpl
+""""""""""""""""""""""""""""""
+"nmap <F8> :SrcExplToggle<CR> 
+"let g:SrcExpl_winHeight = 16
+""let g:SrcExpl_refreshTime = 100 
+"let g:SrcExpl_jumpKey = "<ENTER>" 
+"let g:SrcExpl_gobackKey = "<SPACE>" 
+"let g:SrcExpl_pluginList = [ 
+"        \ "__Tag_List__", 
+"        \ "_NERD_tree_" 
+"    \ ] 
+"let g:SrcExpl_searchLocalDef = 1 
+"let g:SrcExpl_isUpdateTags = 0
+"let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
 
