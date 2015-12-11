@@ -5,3 +5,5 @@ sudo apt-get install git gnupg flex bison gperf build-essential   zip curl libc6
  sudo apt-get install libxml-parser-perl libxml-simple-perl libexpat1 libxml-parser-perl libxml-simple-perl libexpat1 
 三、个人安装
  sudo apt-get install ssh xrdp nautilus-open-terminal vim samba screen axel tree realpath
+
+ sudo apt-get install openjdk-7-jdk
