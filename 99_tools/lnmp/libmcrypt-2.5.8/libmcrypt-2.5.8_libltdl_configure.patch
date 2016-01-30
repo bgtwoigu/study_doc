@@ -1,0 +1,34 @@
+--- C:\Users\xumingtao\Desktop\libmcrypt-2.5.8\libltdl\configure	2003-03-09 01:59:14.000000000 +-0800
++++ W:\xumingtao\LNMP_download\lnmp1.2-full\src\libmcrypt-2.5.8\libltdl\configure	2016-01-26 17:33:22.000000000 +-0800
+@@ -3354,13 +3354,13 @@
+ echo "configure:3355: checking if $compiler supports -c -o file.$ac_objext" >&5
+ if eval "test \"`echo '$''{'lt_cv_compiler_c_o'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   
+ $rm -r conftest 2>/dev/null
+-mkdir conftest
++mkdir aaa;mv aaa conftest
+ cd conftest
+ echo "int some_variable = 0;" > conftest.$ac_ext
+ mkdir out
+ # According to Tom Tromey, Ian Lance Taylor reported there are C compilers
+ # that will create temporary files in the current directory regardless of
+ # the output directory.  Thus, making CWD read-only will cause this test
+@@ -6152,13 +6152,15 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_last=
+   for ac_spec in $library_names_spec; do
+     ac_last="$ac_spec"
+   done
+-  echo "$ac_last" | sed 's/\[.*\]//;s/^[^.]*//;s/\$.*$//;s/\.$//' > conftest
++  echo "$ac_last" | sed 's/\[.*\]//;s/^[^.]*//;s/\$.*$//;s/\.$//' > xmt_test
++  mkdir aaa;mv aaa conftest;rm -rf conftest
++  mv xmt_test conftest
+ libltdl_cv_shlibext=`cat conftest`
+ rm -f conftest
+ 
+ fi
+ 
+ echo "$ac_t""$libltdl_cv_shlibext" 1>&6

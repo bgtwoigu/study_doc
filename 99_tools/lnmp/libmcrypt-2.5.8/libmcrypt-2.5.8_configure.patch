@@ -1,0 +1,62 @@
+--- C:\Users\xumingtao\Desktop\libmcrypt-2.5.8\configure	2007-02-19 14:32:39.000000000 +-0800
++++ W:\xumingtao\LNMP_download\lnmp1.2-full\src\libmcrypt-2.5.8\configure	2016-01-26 17:15:41.000000000 +-0800
+@@ -11576,13 +11576,13 @@
+ echo $ECHO_N "checking if $compiler supports -c -o file.$ac_objext... $ECHO_C" >&6
+ if test "${lt_cv_prog_compiler_c_o+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   lt_cv_prog_compiler_c_o=no
+    $rm -r conftest 2>/dev/null
+-   mkdir conftest
++   mkdir aaa;mv aaa conftest
+    cd conftest
+    mkdir out
+    printf "$lt_simple_compile_test_code" > conftest.$ac_ext
+ 
+    lt_compiler_flag="-o out/conftest2.$ac_objext"
+    # Insert the option either (1) after the last *FLAGS variable, or
+@@ -16489,13 +16489,13 @@
+ echo $ECHO_N "checking if $compiler supports -c -o file.$ac_objext... $ECHO_C" >&6
+ if test "${lt_cv_prog_compiler_c_o_CXX+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   lt_cv_prog_compiler_c_o_CXX=no
+    $rm -r conftest 2>/dev/null
+-   mkdir conftest
++   mkdir aaa;mv aaa conftest
+    cd conftest
+    mkdir out
+    printf "$lt_simple_compile_test_code" > conftest.$ac_ext
+ 
+    lt_compiler_flag="-o out/conftest2.$ac_objext"
+    # Insert the option either (1) after the last *FLAGS variable, or
+@@ -18187,13 +18187,13 @@
+ echo $ECHO_N "checking if $compiler supports -c -o file.$ac_objext... $ECHO_C" >&6
+ if test "${lt_cv_prog_compiler_c_o_F77+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   lt_cv_prog_compiler_c_o_F77=no
+    $rm -r conftest 2>/dev/null
+-   mkdir conftest
++   mkdir aaa;mv aaa conftest
+    cd conftest
+    mkdir out
+    printf "$lt_simple_compile_test_code" > conftest.$ac_ext
+ 
+    lt_compiler_flag="-o out/conftest2.$ac_objext"
+    # Insert the option either (1) after the last *FLAGS variable, or
+@@ -20786,13 +20786,13 @@
+ echo $ECHO_N "checking if $compiler supports -c -o file.$ac_objext... $ECHO_C" >&6
+ if test "${lt_cv_prog_compiler_c_o_GCJ+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   lt_cv_prog_compiler_c_o_GCJ=no
+    $rm -r conftest 2>/dev/null
+-   mkdir conftest
++   mkdir aaa;mv aaa conftest
+    cd conftest
+    mkdir out
+    printf "$lt_simple_compile_test_code" > conftest.$ac_ext
+ 
+    lt_compiler_flag="-o out/conftest2.$ac_objext"
+    # Insert the option either (1) after the last *FLAGS variable, or
