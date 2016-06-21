@@ -1,1 +1,3 @@
-http://ibotpeaches.github.io/Apktool/install/
+apktool: http://ibotpeaches.github.io/Apktool/install/
+dex2jar: https://github.com/pxb1988/dex2jar
+jdjui: http://jd.benow.ca/
